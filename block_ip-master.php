@@ -21,7 +21,7 @@ $block_ip_array = explode(",", $block_ip);
 $banned_ip = $block_ip_array;
 if ( in_array( getenv("REMOTE_ADDR"), $banned_ip ) )
 {
-emMsg($block_des);
+echo "<script>alert('$block_des');location.href = \"http://127.0.0.1\";</script>";
 }
 }  
 function ip_cc(){
