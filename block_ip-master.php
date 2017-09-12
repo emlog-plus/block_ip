@@ -2,7 +2,7 @@
 /*
 Plugin Name: 防CC攻击
 Version: 0.1
-Plugin URL: https://crazyus.ga
+Plugin URL: https://github.com/emlog-plus/block_ip
 Description: 简单有效的防止CC攻击,可以自行填写IP黑名单
 Author: Flyer
 Author Email: gao.eison@gmail.com
