@@ -62,7 +62,7 @@ echo $data['cc'];?> 次数</div>
         $res = $DB->query("SELECT `id`, `date`, `serverip` FROM ".DB_PREFIX."block order by date desc limit ".(($page-1)*$pagenum).",$pagenum");
 	$pageurl =  pagination($count['num'],$pagenum,$page,"plugin.php?plugin=block_ip-master&page=");
          while($row = $DB->fetch_array($res)){
-    $output= empty($row) ? '<tr><td colspan="2">暂无攻击</td></tr>' : '<tr><td>'.$row['serverip'].'</td><td>'.date("Y-m-d h:i",$row['date']).'</td></tr>';
+    $output.= empty($row) ? '<tr><td colspan="2">暂无攻击</td></tr>' : '<tr><td>'.$row['serverip'].'</td><td>'.date("Y-m-d h:i",$row['date']).'</td></tr>';
   }
   echo $output;
       ?>
