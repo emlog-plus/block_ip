@@ -103,7 +103,7 @@ echo $data['cc'];?> 次数</div>
  </div>
  <div class="form-group">
 <label class="control-label mb-10">
-<input type="checkbox" name="is_via" id="is_via" value="true"<?php if($is_via == "true"):?> checked<?php endif;?> /> 禁止IP代理访问本站</label>
+<input type="checkbox" name="is_via" id="is_via" value="true"<?php if($is_via == "true"):?> checked<?php endif;?> /> 禁止使用IP代理访问本站</label>
  </div>
 <div class="form-group">
 <label class="control-label mb-10">IP黑名单<sup>用逗号分开</sup></label>
@@ -111,7 +111,7 @@ echo $data['cc'];?> 次数</div>
  </textarea>
 </div>
 <div class="form-group">
-<label class="control-label mb-10">IP禁用描述</label>
+<label class="control-label mb-10">IP被禁用描述</label>
 <input type="text" name="block_des" value="<?php echo $block_des; ?>" size="20" class="form-control"/>
  </div>
 <div class="form-group"><input type="submit" value="保存设置"  class="btn btn-success button"/></div>
