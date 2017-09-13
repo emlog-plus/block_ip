@@ -48,6 +48,17 @@ $DB = Database::getInstance();
 $ip=getIp();
 $date=time();
 $DB->query("INSERT IGNORE INTO `".DB_PREFIX . "block` (`date`,`serverip`) values ('$date','$ip')"); 
+  $data = "<?php
+  \$block_second = '".$block_second."';
+  \$block_refresh = '".$block_refresh."';
+  \$block_ip = '".$block_ip.",".$ip."';
+  \$block_des = '".$block_des."';
+  \$is_via = '".$is_via."';
+?>";
+    $file = EMLOG_ROOT.'/content/plugins/block_ip-master/block_ip-master_config.php';
+    @ $fp = fopen($file, 'wb') OR emMsg('读取文件失败，如果您使用的是Unix/Linux主机，请修改文件/content/plugins/block_ip-master/block_ip-master_config.php的权限为755或777。如果您使用的是Windows主机，请联系管理员，将该文件设为everyone可写');
+    @ $fw = fwrite($fp,$data) OR emMsg('写入文件失败，如果您使用的是Unix/Linux主机，请修改文件/content/plugins/block_ip-master/block_ip-master_config.php的权限为755或777。如果您使用的是Windows主机，请联系管理员，将该文件设为everyone可写');
+fclose($fp);	
 exit('Access Denied');
 }
 }else{
