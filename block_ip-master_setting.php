@@ -4,9 +4,8 @@
  * @copyright (c) crazyus.ga All Rights Reserved
  */
 !defined('EMLOG_ROOT') && exit('access deined!');
-include(EMLOG_ROOT.'/content/plugins/block_ip-master/block_ip-master_config.php');
 function plugin_setting_view() {
-}
+include(EMLOG_ROOT.'/content/plugins/block_ip-master/block_ip-master_config.php');
 ?>
 <script type="text/javascript">
  $("#menu_mg").addClass('active');
@@ -120,8 +119,8 @@ echo $data['cc'];?> 次数</div>
 </div>
 </div>
 </div>
-
 <?php
+}
 function plugin_setting(){
   $block_ip = isset($_POST['block_ip']) ? addslashes($_POST['block_ip']) : '';
   $block_second = isset($_POST['block_second']) ? addslashes($_POST['block_second']) : '';
