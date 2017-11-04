@@ -65,17 +65,7 @@ exit('Access Denied');
 $_SESSION['refresh_times'] = 0;
 $_SESSION['last_time'] = $cur_time;
 }
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-    if(!headers_sent()) {
-        header("Status: 301 Moved Permanently");
-                header(sprintf(
-            'Location: https://%s%s',
-            $_SERVER['HTTP_HOST'],
-            $_SERVER['REQUEST_URI']
-            ));
-        exit();
-        }
-        }
+
  }
  addAction('index_head', 'ip_cc');
   addAction('index_head', 'checkip');
